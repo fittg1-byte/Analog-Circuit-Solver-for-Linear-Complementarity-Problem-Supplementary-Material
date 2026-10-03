@@ -1,0 +1,53 @@
+# --- Generated run artifacts -------------------------------------------------
+# Every run writes a timestamped set of netlists, ngspice raw files, result JSON
+# and PNGs, and these are large (the working tree held ~120 MB of them before
+# the first commit). main.py creates output/ on demand, so it needs no
+# placeholder.
+#
+# The bare globs also cover runs pointed elsewhere with --out-dir. To commit a
+# netlist deliberately, as a reference or a paper figure: git add -f <file>.cir
+output/
+*.raw
+*.cir
+*.out
+*.out.[0-9]
+
+# --- Input matrices (CSVs/) ---------------------------------------------------
+# Excluded FOR NOW: the folder accrued a mix of deliberate example problems and
+# ad hoc/debug scratch files, and they haven't been sorted yet. Once a curated
+# subset is picked, add it back deliberately (git add -f CSVs/<file>.csv, or
+# narrow/remove this rule) rather than re-adding the whole folder.
+CSVs/
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# --- Virtual environments ----------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# --- Tooling caches ----------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Editors and local agent settings ----------------------------------------
+.claude/settings.local.json
+.vscode/
+.idea/
+*.swp
+
+# --- OS ----------------------------------------------------------------------
+Thumbs.db
+Desktop.ini
+.DS_Store

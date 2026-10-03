@@ -1,0 +1,20 @@
+# Core numeric
+numpy>=1.26
+
+# Plotting
+matplotlib>=3.8
+
+# Testing
+pytest>=8.0
+
+# NOTE: ngspice is NOT a Python package. Install it separately; see README.
+
+# Deliberately NOT a dependency: PySpice (GPL-3.0).
+# sim/runner.py can drive ngspice through PySpice's NgSpiceShared instead of the
+# default subprocess backend, but only when you set PYSPICE_BACKEND=shared AND
+# have installed PySpice yourself. The import lives inside that function, so
+# nothing here imports it and this MIT-licensed project never distributes or
+# links against GPL code. Leave the line below commented out unless you want
+# that backend and accept its license.
+#
+# PySpice==1.5
